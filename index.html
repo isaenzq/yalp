@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yalp | Yet another landing page</title>
+		<meta name="description" content="Yalp is yet another landing page. Because there are not enought out there, in the vast internet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/uikit.min.css" />
+        <script src="assets/js/uikit.min.js"></script>
+		<script src="assets/js/uikit-icons.min.js"></script>
+
+		<!-- Custom style [relocate to custom.css]-->
+
+		<style>
+
+			@media (max-width: 1025px) {
+
+				#main-nav{
+					padding: 0 5px;
+					height: 70px;
+				}
+
+			}
+
+			@media (min-width: 1025px) {
+
+				#main-nav{
+					padding: 0 50px;
+					height: 70px;
+				}
+
+			}
+			
+			/*#main-nav{
+				padding: 0 50px;
+				height: 70px;
+			}*/
+
+			.desktop-nav .uk-active:after{
+				content: '';
+				display: block;
+				position: relative;
+				bottom: 22px;
+				left: .45rem;
+				width: calc(100% - 0.95rem);
+				height: .15rem;
+				background: linear-gradient(141deg,#32aaf3 -25%, #32f3dc 75%);
+				border-radius: 4px;
+			}
+
+			.uk-offcanvas-bar{
+				background: linear-gradient(141deg,#32aaf3 -25%, #32f3dc 75%);
+				width: 100vw;
+			}
+
+			.uk-logo {
+				font-size: 1.1rem;
+			}
+
+			#logo img{
+				height: 28px;
+				vertical-align: -6px;
+				margin-right: 15px;
+			}
+
+			#logo a{
+				text-transform: uppercase;
+				
+			}
+
+			.uk-light .uk-logo{
+				color: #ffffff;
+			}
+
+			.uk-dark .uk-logo{
+				color: #333;
+			}
+
+			.uk-navbar-nav>li>a{
+				/*font-size: 0.725rem;*/
+			}
+			
+			:not(uk-navbar-dropdown-bottom-left) .uk-navbar-dropdown:before{
+				moz-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background-color: #fff;
+				box-shadow: -2px -2px 3px -1px rgba(0,0,0,.1);
+				content: '';
+				position: absolute;
+				top: -5px;
+				right: 80px;
+				width: .75rem;
+				height: .75rem;
+			}
+
+			.uk-navbar-dropdown-bottom-left:before{
+				moz-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background-color: #fff;
+				box-shadow: -2px -2px 3px -1px rgba(0,0,0,.1);
+				content: '';
+				position: absolute;
+				top: -5px;
+				left: 40px;
+				width: .75rem;
+				height: .75rem;
+			}
+
+			.uk-navbar-sticky{
+				background-color: rgba(255,255,255,1) !important;
+				border-bottom: 1px solid transparent;
+				box-shadow: rgba(29,29,31,0.07) 0 10px 60px;
+			}
+
+			.uk-overlay-primary {
+				background: rgba(34,34,34,.9);
+			}
+
+			.uk-search-icon svg{
+				margin-left: 10px;
+			}
+
+			.custom-button{
+				padding: 0 20px;
+				background: linear-gradient(141deg,#32aaf3 -25%, #32f3dc 75%);
+    			color: #fff;
+			}
+
+			.custom-button:hover{
+				background: linear-gradient(141deg,#68c5ff -25%,#65ffed 75%);
+    			color: #fff;
+			}
+
+			.uk-nav-header{
+				font-size: .700rem;
+			}
+
+			.uk-navbar-dropdown-nav{
+				font-size: .700rem;
+			}
+
+			.logo-capital{
+				font-size: 1.3rem;
+				font-weight: 800;
+				color: #30dee2;
+			}
+
+			
+
+		</style>
+
+		<!-- /Custom style [relocate to custom.css]-->
+
+	</head>
+	<body>
+		<div class="uk-offcanvas-content"> <!-- It is mandatory by UiKit to wrap everythig inside this div in case we are using a offcanvas menu -->
+			<!-- The whole page content goes here -->
+			<!-- Relative positioning [Nav and hero]-->
+			<div id="hero" class="uk-position-relative uk-cover-container uk-height-medium uk-height-viewport">
+				<video autoplay loop muted playsinline uk-cover>
+					<source src="videos/hero_.mp4" type="video/mp4">
+				</video>
+				<div class="uk-overlay-primary uk-position-cover"></div>
+				<div class="uk-position-top">
+					<!-- NAV -->
+					<header>
+						<nav id="main-nav"class="uk-navbar-container uk-navbar" uk-navbar uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent uk-light; top: 65vh">
+							<div class="uk-navbar-left">
+								<div id="logo" class="uk-navbar-item">
+									<a class="uk-logo" href=""><span class="logo-capital">Y </span>a l p</a>
+								</div>
+							</div>
+							<div class="uk-navbar-right">
+								<ul class="uk-navbar-nav desktop-nav uk-visible@m" uk-scrollspy-nav="closest: li; scroll: true; offset: 138">
+									<li class="uk-active"><a href="#hero" uk-scroll>Home</a></li>
+									<li><a href="#services" uk-scroll="offset: 128">Services we offer</a></li>
+									<li><a href="#portfolio" uk-scroll="offset: 128">Our incredible Portfolio</a></li>
+									<li><a href="#contact" uk-scroll="offset: 128">We wanna work with you!</a></li>
+								</ul>
+								<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-usage" uk-toggle>
+									<span class="uk-margin-small-right">Menu</span><span uk-navbar-toggle-icon></span>
+								</a>
+							</div>
+							<hr class=".uk-divider-icon">
+						</nav>
+					</header>
+					<!-- /NAV -->
+				</div>
+				<!-- HERO -->
+				<div class="uk-position-center uk-container uk-container-small uk-flex-auto uk-text-center uk-light" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+					<h1 class="uk-heading-primary animate uk-invisible">Yalp is yet another landing page</h1>
+					<div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
+						<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, reiciendis maxime, facilis nam natus incidunt provident.</p>
+					</div>
+					<div class="uk-margin-medium-top animate uk-invisible" data-uk-margin data-uk-scrollspy-class="uk-animation-fade uk-invisible">
+						<a href="#services" class="uk-button custom-button uk-dark uk-button-large uk-width-2-3 uk-width-auto@s" uk-scroll="offset: 100" data-uk-icon="arrow-down" title="Learn More">Learn more </a>
+					</div>
+				</div>
+				<!-- /HERO -->
+			</div>
+			<!-- /Relative positioning -->
+
+			<!-- Main content -->
+
+			<div class="tm-main uk-section uk-section-default">
+				<!-- Section 1-->
+				<div id="services" class="uk-container uk-container-small uk-margin-large-bottom">
+					<h2>This is services</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+				</div>
+				<!-- Section 2-->
+				<div id="portfolio" class="uk-container uk-container-small uk-margin-large-bottom">
+					<h2>This is Portfolio</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+				</div>
+				<!-- Section 2-->
+				<div id="contact" class="uk-container uk-container-small uk-margin-large-bottom">
+					<h2>We wanna work with you!</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum dolores molestiae tempora deleniti error quibusdam doloremque iste et qui, excepturi, itaque eligendi consequatur blanditiis quae sed non veritatis. Veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam distinctio eligendi ad porro, doloremque sunt deleniti quam molestias, quis consequuntur tempora ab tempore commodi libero ratione architecto perferendis, voluptas accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dignissimos, deleniti odit nostrum consequuntur temporibus possimus, velit vel architecto reiciendis quos quisquam officiis voluptas pariatur saepe. Incidunt deleniti praesentium ea?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta enim reprehenderit quo dolores ad quos, quidem nam, iure ea suscipit minima ipsum aut molestias tempora nulla perferendis quasi distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus sequi officiis aliquam earum ducimus beatae ratione, in odio iste. Sequi ut eos et sit cumque ipsum ratione dolores modi.</p>
+				</div>
+			</div>
+			
+			
+			<!-- Search Modal -->
+
+			<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+				<div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+					<button class="uk-modal-close-full" type="button" uk-close></button>
+					<form class="uk-search uk-search-large">
+						<input class="uk-search-input uk-text-center" type="search" placeholder="Buscar en la web..." autofocus>
+					</form>
+				</div>
+			</div>
+
+			<!-- /Search Modal -->
+
+			<!-- Off-Canvas toggle -->
+
+			<button  class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Open</button>
+			<a href="#offcanvas-usage" uk-toggle>Open</a>
+
+			<!-- Off-Canvas Menu -->
+			<div id="offcanvas-usage" uk-offcanvas="flip: true; overlay: false; mode: push">
+				<div class="uk-offcanvas-bar">
+					<button class="uk-offcanvas-close" type="button" uk-close></button>
+					<ul id="mobile-nav" class="uk-nav uk-nav-default uk-margin-large-top" uk-scrollspy-nav="closest: li; scroll: true; offset: 118">
+						<li class="uk-nav-header">Navigation</li>
+						<li class="uk-active"><a href="#hero" uk-scroll>Home</a></li>
+						<li><a href="#services" uk-scroll="offset: 100">Services we offer</a></li>
+						<li><a href="#portfolio" uk-scroll="offset: 100">Our incredible Portfolio</a></li>
+						<li><a href="#contact" uk-scroll="offset: 100">We wanna work with you!</a></li>
+						<li class="uk-nav-divider"></li>
+						<li class="uk-nav-header">About</li>
+						<p>Yalp is yet another landing page by Iñigo Saenz Quevedo, built using UiKit and Hugo.</p>
+						<li class="uk-nav-divider"></li>
+						<li class="uk-nav-header">Get in touch</li>
+						<p>Yalp is yet another landing page by Iñigo Saenz Quevedo, built using UiKit and Hugo.</p>
+					</ul>
+				</div>
+			</div>
+			<!-- /Off-Canvas Menu -->
+
+		</div>
+		
+	</body>
+	
+	<!--
+	<body class="uk-light wrap uk-background-norepeat uk-background-cover uk-background-center-center uk-background-secondary" style="background-image: url(https://picsum.photos/2400/1150/?image=482)">
+		<div class="uk-offcanvas-content">
+			<div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-position-z-index uk-position-relative" data-uk-height-viewport="min-height: 400">
+				
+				NAV
+				<div class="uk-position-top">
+					<div class="uk-container uk-container">
+						<nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+							<div class="uk-navbar-left">
+								<div class="uk-navbar-item">
+									<a class="uk-logo" href=""><img src="images/zalla.svg" alt="Logo">Zallalan</a>
+								</div>
+							</div>
+							<div class="uk-navbar-right">
+								<ul class="uk-navbar-nav">
+									<li class="uk-active uk-visible@m"><a href="" data-uk-icon="home"></a></li>
+									<li class="uk-visible@s"><a href="">Features</a></li>
+									<li class="uk-visible@s"><a href="">Security</a></li>
+									<li class="uk-visible@s"><a href="">Testimonials</a></li>
+									<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+				/NAV
+
+				TEXT
+				<div class="uk-container uk-container-small uk-flex-auto uk-text-center" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+					<h1 class="uk-heading-primary animate uk-invisible" style="font-weight: 700;">Sleek, Fast and Reliable.</h1>
+					<div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
+						<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, reiciendis maxime, facilis nam natus incidunt provident.</p>
+					</div>
+					<div class="uk-margin-medium-top animate uk-invisible" data-uk-margin data-uk-scrollspy-class="uk-animation-fade uk-invisible">
+						<a class="uk-button uk-button-default uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="arrow-right" title="Learn More">LEARN MORE</a>
+						<a class="uk-button uk-button-primary uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="check" title="Learn More">TRY IT OUT</a>
+					</div>
+				</div>
+				/TEXT
+
+				<div class="uk-container">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consectetur? Reprehenderit, assumenda quas deserunt aliquid nobis ducimus nisi odio, suscipit, doloremque atque cum perferendis sunt obcaecati. Commodi beatae ea eveniet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum dolore nesciunt reprehenderit! Ipsa, voluptatibus enim molestiae similique temporibus tempora itaque dicta fugit, eveniet quaerat fugiat sit, molestias maxime ratione! Animi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, ea. Libero asperiores temporibus quia fuga ad vitae doloribus quae veniam atque debitis, provident a laudantium in ipsum, ducimus tempore illo!</p>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt ex minima hic ipsa laboriosam veritatis suscipit. Veritatis reiciendis, excepturi nobis at eaque, temporibus odio repellendus itaque quia doloremque tenetur similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut minus commodi, voluptates culpa voluptatum quis corrupti fugit quam. Veritatis rerum ad dolor ipsa vero laudantium officiis labore inventore ipsum eius?</p>
+				</div>
+
+				FOOT
+				<div class="uk-position-bottom-center uk-position-small">
+					<span class="uk-text-small uk-text-center">© 2018 | <a href="https://github.com/zzseba78/Kick-Off" title="Created by KickOff">Created by KickOff</a> | Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a></span>
+				</div>
+				/FOOT
+
+			</div>
+
+			OFFCANVAS
+			<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: false">
+				<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+					<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+					<ul class="uk-nav uk-nav-default">
+						<li class="uk-active"><a href="#">Active</a></li>
+						<li class="uk-parent">
+							<a href="#">Parent</a>
+							<ul class="uk-nav-sub">
+								<li><a href="#">Sub item</a></li>
+								<li><a href="#">Sub item</a></li>
+							</ul>
+						</li>
+						<li class="uk-nav-header">Header</li>
+						<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+						<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+						<li class="uk-nav-divider"></li>
+						<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li>
+					</ul>
+					<h3>Title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+			</div>
+			/OFFCANVAS
+
+		</div>
+	</body>
+
+-->
+</html>
